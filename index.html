@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Portfolio — STEM · AI & Data Science</title>
+  <meta name="description" content="Portfolio for an aspiring AI & Data Scientist, backend developer and HRD working with ERP solutions." />
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--muted:#94a3b8;--accent:#60a5fa;--glass:rgba(255,255,255,0.03)}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial; background:linear-gradient(180deg,#081020 0%, #091427 100%);color:#e6eef8;line-height:1.5}
+    .container{max-width:1100px;margin:32px auto;padding:24px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .logo{display:flex;gap:12px;align-items:center}
+    .logo .dot{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#7dd3fc);display:flex;align-items:center;justify-content:center;color:#041426;font-weight:700}
+    nav a{color:var(--muted);text-decoration:none;margin-left:14px}
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:22px;align-items:center;margin-top:28px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border-radius:14px;padding:22px;box-shadow:0 6px 18px rgba(2,6,23,0.6);border:1px solid rgba(255,255,255,0.03)}
+    h1{margin:0 0 10px;font-size:28px}
+    p.lead{color:var(--muted);margin:0}
+    .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+    .tag{background:var(--glass);padding:6px 10px;border-radius:999px;font-size:13px;color:var(--muted);border:1px solid rgba(255,255,255,0.03)}
+    .avatar{width:100%;height:100%;border-radius:12px;overflow:hidden;background:linear-gradient(180deg,#06202a,#063047);display:flex;align-items:center;justify-content:center}
+    .avatar h2{color:var(--accent);font-size:22px;margin:0}
+
+    section{margin-top:22px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+    .project-card{padding:16px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03)}
+    .project-card h3{margin:0 0 8px}
+    .code{background:#021224;padding:12px;border-radius:8px;overflow:auto;font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', 'Courier New', monospace;font-size:13px;color:#bfe8ff}
+    footer{margin-top:28px;text-align:center;color:var(--muted);font-size:14px}
+    .btn{display:inline-block;padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,var(--accent),#34d399);color:#041426;font-weight:600;text-decoration:none;border:none;cursor:pointer}
+    .meta{color:var(--muted);font-size:13px}
+    /* responsive */
+    @media (max-width:900px){.hero{grid-template-columns:1fr;}.grid-3{grid-template-columns:repeat(2,1fr)}.projects{grid-template-columns:1fr}.grid-3 .col{padding-bottom:10px}}
+    @media (max-width:560px){.grid-3{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <div class="dot">AI</div>
+        <div>
+          <div style="font-weight:700">Your Name</div>
+          <div class="meta">Aspiring AI & Data Scientist · Backend · HRD · ERP</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="card">
+          <h1>Interested in STEM & exploring the unseen.</h1>
+          <p class="lead">I am an aspiring AI & Data Scientist with interests in backend development and HRD — building ERP solutions and learning continuously. I enjoy turning messy data into crisp decisions and building systems that help people work smarter.</p>
+
+          <div class="tags" style="margin-top:16px">
+            <div class="tag">AI / ML</div>
+            <div class="tag">Data Science</div>
+            <div class="tag">Backend (FastAPI, Flask)</div>
+            <div class="tag">ERP & HRD</div>
+            <div class="tag">Python</div>
+            <div class="tag">Databases</div>
+          </div>
+
+          <div style="margin-top:18px;display:flex;gap:10px;align-items:center">
+            <a class="btn" href="#projects">See Projects</a>
+            <a class="btn" onclick="downloadResume()" style="background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--accent)">Download Resume</a>
+          </div>
+        </div>
+
+        <aside class="card avatar">
+          <div>
+            <h2>Exploring the worlds unseen</h2>
+            <p class="meta" style="text-align:center;margin-top:8px">Chittagong · Bangladesh</p>
+          </div>
+        </aside>
+      </section>
+
+      <section id="about" class="card">
+        <h2>About me</h2>
+        <p class="meta">Personalization / background (editable)</p>
+        <p style="color:var(--muted)">Interested in STEM, becoming an AI and Data Scientist, backend, HRD (working with ERP solution, developing it through continuous learning). Exploring the worlds unseen area.</p>
+        <div style="margin-top:12px;color:var(--muted)">I build small tools, prototypes, and dashboards. I prefer pragmatic, well-tested code and clear visualizations.</div>
+      </section>
+
+      <section id="skills" class="grid-3" style="margin-top:16px">
+        <div class="card col">
+          <h3>Technical</h3>
+          <ul class="meta">
+            <li>Python (pandas, scikit-learn, numpy)</li>
+            <li>FastAPI / Flask</li>
+            <li>SQL / PostgreSQL</li>
+            <li>Machine learning pipelines</li>
+          </ul>
+        </div>
+        <div class="card col">
+          <h3>Data & Tools</h3>
+          <ul class="meta">
+            <li>Jupyter / Colab</li>
+            <li>Docker</li>
+            <li>Git / GitHub</li>
+            <li>Tableau / Matplotlib / Folium</li>
+          </ul>
+        </div>
+        <div class="card col">
+          <h3>Soft / HRD</h3>
+          <ul class="meta">
+            <li>Requirement gathering for ERP</li>
+            <li>Training & documentation</li>
+            <li>Process mapping</li>
+            <li>Continuous learning mindset</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="projects">
+        <h2 style="margin-top:8px">Projects</h2>
+        <div class="projects">
+          <div class="project-card">
+            <h3>Customer Churn Prediction</h3>
+            <p class="meta">Python · scikit-learn · pandas</p>
+            <p class="meta">A small classification pipeline predicting churn with feature engineering, cross-validation and a simple dashboard.</p>
+            <div style="margin-top:8px" class="code"># sample (click to expand)
+import pandas as pd
+from sklearn.ensemble import RandomForestClassifier
+
+# load, preprocess, train
+</div>
+          </div>
+
+          <div class="project-card">
+            <h3>ERP — HR Module Prototype</h3>
+            <p class="meta">Flask · SQLite · HTML</p>
+            <p class="meta">Prototype HR module: employee records, leave management, and simple reporting for HR admins.</p>
+            <div class="code"># Flask example
+from flask import Flask, request, jsonify
+app = Flask(__name__)
+
+@app.route('/api/employees')
+def list_employees():
+    return jsonify([])
+</div>
+          </div>
+
+          <div class="project-card">
+            <h3>Backend API (FastAPI)</h3>
+            <p class="meta">FastAPI · PostgreSQL · Docker</p>
+            <p class="meta">A demo REST API for employee & payroll endpoints with JWT auth and tests.</p>
+            <div class="code"># FastAPI snippet
+from fastapi import FastAPI
+app = FastAPI()
+
+@app.get('/health')
+def health():
+    return {'status':'ok'}
+</div>
+          </div>
+
+          <div class="project-card">
+            <h3>Chittagong Map Visualization</h3>
+            <p class="meta">GeoPandas · Folium · Matplotlib</p>
+            <p class="meta">Interactive map showing points of interest and simple choropleth by ward.</p>
+            <div class="code"># Folium quickstart
+import folium
+m = folium.Map(location=[22.3569,91.7832], zoom_start=12)
+</div>
+          </div>
+        </div>
+
+        <div style="margin-top:14px" class="card">
+          <h3>Project showcase — expanded with code</h3>
+          <p class="meta">Each project has a short description, tech stack, and a small runnable code snippet for rapid review.</p>
+          <details style="margin-top:10px">
+            <summary style="cursor:pointer">Customer Churn Prediction — condensed notebook</summary>
+            <pre class="code"># Data science mini-notebook
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import classification_report
+
+df = pd.read_csv('data/churn.csv')
+X = df.drop('churn', axis=1)
+y = df['churn']
+X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.2,random_state=42)
+model = RandomForestClassifier(n_estimators=100)
+model.fit(X_train, y_train)
+print(classification_report(y_test, model.predict(X_test)))
+</pre>
+          </details>
+        </div>
+      </section>
+
+      <section id="contact" class="card">
+        <h2>Contact</h2>
+        <p class="meta">Interested in collaborations or internships? Let's talk.</p>
+        <p style="margin-top:6px">Email: <a href="mailto:your.email@example.com" style="color:var(--accent)">your.email@example.com</a></p>
+        <div style="margin-top:12px">
+          <a class="btn" href="mailto:your.email@example.com">Email me</a>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      Built with curiosity · © <span id="year"></span>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').innerText = new Date().getFullYear();
+    function downloadResume(){
+      alert('Add your resume file to the project folder and point the download link to it.');
+    }
+  </script>
+</body>
+</html>
