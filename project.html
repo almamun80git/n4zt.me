@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Projects — Code Showcase</title>
+  <meta name="description" content="Code showcase of projects with snippets for AI, data science, backend, and mapping." />
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--muted:#94a3b8;--accent:#60a5fa;--glass:rgba(255,255,255,0.03)}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial; background:linear-gradient(180deg,#081020 0%, #091427 100%);color:#e6eef8;line-height:1.5}
+    .container{max-width:1100px;margin:32px auto;padding:24px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .logo{display:flex;gap:12px;align-items:center}
+    .logo .dot{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#7dd3fc);display:flex;align-items:center;justify-content:center;color:#041426;font-weight:700}
+    nav a{color:var(--muted);text-decoration:none;margin-left:14px}
+    h1{margin:0 0 10px;font-size:28px}
+    .meta{color:var(--muted);font-size:14px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border-radius:14px;padding:22px;box-shadow:0 6px 18px rgba(2,6,23,0.6);border:1px solid rgba(255,255,255,0.03)}
+    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+    .project-card{padding:16px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03)}
+    .project-card h3{margin:0 0 8px}
+    .code{background:#021224;padding:12px;border-radius:8px;overflow:auto;font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', 'Courier New', monospace;font-size:13px;color:#bfe8ff}
+    .btn{display:inline-block;padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,var(--accent),#34d399);color:#041426;font-weight:600;text-decoration:none;border:none;cursor:pointer}
+    footer{margin-top:28px;text-align:center;color:var(--muted);font-size:14px}
+    @media (max-width:900px){.projects{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <div class="dot">M-S</div>
+        <div>
+          <div style="font-weight:700">Munix Shadow</div>
+          <div class="meta">Aspiring AI & Data Scientist · Backend · HRD · ERP</div>
+        </div>
+      </div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="project.html">Projects</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="card">
+        <h1>Code Showcase</h1>
+        <p class="meta">Selected projects with concise code samples and stacks.</p>
+      </section>
+
+      <section class="projects" style="margin-top:14px">
+        <div class="project-card">
+          <h3>Customer Churn Prediction</h3>
+          <p class="meta">Python · scikit-learn · pandas</p>
+          <p class="meta">Classification pipeline with train/test split and evaluation.</p>
+          <div class="code"># churn.py
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import classification_report
+
+df = pd.read_csv('data/churn.csv')
+X = df.drop('churn', axis=1)
+y = df['churn']
+X_tr, X_te, y_tr, y_te = train_test_split(X, y, test_size=0.2, random_state=42)
+model = RandomForestClassifier(n_estimators=200, random_state=42)
+model.fit(X_tr, y_tr)
+print(classification_report(y_te, model.predict(X_te)))
+</div>
+        </div>
+
+        <div class="project-card">
+          <h3>ERP — HR Module Prototype</h3>
+          <p class="meta">Flask · SQLite · REST</p>
+          <p class="meta">Minimal CRUD endpoints for employees.</p>
+          <div class="code"># app.py (Flask)
+from flask import Flask, request, jsonify
+app = Flask(__name__)
+
+employees = []
+
+@app.get('/api/employees')
+def list_employees():
+    return jsonify(employees)
+
+@app.post('/api/employees')
+def create_employee():
+    data = request.json
+    employees.append(data)
+    return jsonify(data), 201
+</div>
+        </div>
+
+        <div class="project-card">
+          <h3>Backend API (FastAPI)</h3>
+          <p class="meta">FastAPI · PostgreSQL · Docker</p>
+          <p class="meta">Healthcheck and sample route.</p>
+          <div class="code"># main.py (FastAPI)
+from fastapi import FastAPI
+app = FastAPI()
+
+@app.get('/health')
+def health():
+    return {'status':'ok'}
+</div>
+        </div>
+
+        <div class="project-card">
+          <h3>Chittagong Map Visualization</h3>
+          <p class="meta">GeoPandas · Folium</p>
+          <p class="meta">Interactive map centered on Chittagong.</p>
+          <div class="code"># map.py
+import folium
+m = folium.Map(location=[22.3569,91.7832], zoom_start=12)
+# m.save('map.html')
+</div>
+        </div>
+      </section>
+
+      <section class="card" style="margin-top:14px;display:flex;justify-content:space-between;align-items:center;gap:10px">
+        <div>
+          <h3 style="margin:0 0 6px">Want to see more?</h3>
+          <p class="meta" style="margin:0">Check the condensed examples above or contact me for full repositories.</p>
+        </div>
+        <a class="btn" href="index.html">Back to Home</a>
+      </section>
+    </main>
+
+    <footer>
+      Built by Munix · © <span id="year"></span>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').innerText = new Date().getFullYear();
+  </script>
+</body>
+</html>
